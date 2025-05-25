@@ -1,0 +1,6 @@
+@media (min-width: 992px) {
+    .right-panel-scroll {
+      max-height: 350px;
+      overflow: auto;
+    }
+  }
