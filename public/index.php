@@ -1,6 +1,6 @@
 <?php
 
-$basePath = '/practical/ajax_crud/public';
+$basePath = '/practical/MiniERP/public';
 $url = str_replace($basePath,'', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
 $page = "views/$url.php";
