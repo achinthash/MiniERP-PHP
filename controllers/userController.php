@@ -260,8 +260,15 @@ if ($action == 'delete') {
 
     $result = $user->delete($userId,$password);
 
-    echo json_encode($result);
-    exit;
+    if($result){
+        echo json_encode(['success'=> true, 'message' => 'Category Delete Successfully.']);
+        exit;
+    }else{
+        echo json_encode(['success'=> false, 'message' => 'unable to Category Delete.']);
+        exit;
+    }
+
+   
 }
 
 

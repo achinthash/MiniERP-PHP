@@ -22,8 +22,8 @@ CREATE TABLE categories (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
--- item table
-CREATE TABLE items (
+-- item table ($category_id,$sku,$name,$description,$unit_price,$quantity_in_stock,$image)
+CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,
     category_id INT NOT NULL,
     sku VARCHAR(50) NOT NULL UNIQUE,
@@ -31,6 +31,7 @@ CREATE TABLE items (
     description TEXT,
     unit_price DECIMAL(12,2) NOT NULL,
     quantity_in_stock INT DEFAULT 0,
+    image VARCHAR(255) DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
