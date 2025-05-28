@@ -14,31 +14,35 @@
   }
 ?>
 
-<?php include './Components/NavigationBar.php' ?>
 
+<div style="background-color: #dfd3ed;  color: #7626d1" class="p-2  m-1 rounded  d-flex justify-content-between" >
+  <h5 class="text-start "> Inventory </h5>
 
-<div style="background-color: #9a6dbd;" class="text-start p-2   m-1 rounded text-light d-flex justify-content-between" >
-    <h4> Inventory </h4>
+  <div class="dropdown ">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Items</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" type="button"  onclick="handleCategory()" >Category</a></li>
+      <li><a class="dropdown-item" type="button"  onclick="handleProducts()" >Products</a></li>
 
-    <button class="btn btn-primary" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newProduct"> New Product </button>
-</div>
-
-<!-- new products modal  -->
-<div class="modal fade" id="newProduct" aria-hidden="true" aria-labelledby="newProduct" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">    
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="newProduct">new categoryu</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <?php include './Components/Products/NewProduct.php' ?>
-      </div>
-     
-    </div>
+    </ul>
   </div>
+
 </div>
 
-<script src="./assests/js/inventory.js"> </script>
 
-<?php $content = ob_get_clean(); include './layout.php' ?>
+
+<div id="products-section">
+  <?php include './Components/Inventory/ProductsSection.php' ?>
+</div>
+
+<div id="category-section" class="d-none"> 
+  <?php include './Components/Inventory/CategorySection.php' ?>
+</div>
+
+
+
+
+
+<script src="./assests/js/inventory.js"> </script> 
+
+<?php $content = ob_get_clean(); include './layout.php' ?> 

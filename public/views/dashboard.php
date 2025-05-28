@@ -5,7 +5,7 @@
 ob_start();
 session_start();
 
-include './Components/NavigationBar.php'
+
 ?>
 
 

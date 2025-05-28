@@ -1,8 +1,8 @@
 
 <?php
   ob_start(); 
+ 
   session_start();
-
   if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_role']) ) {
     header("Location: login");
     exit;
@@ -15,11 +15,12 @@
 
 
 ?>
+  
+
+   
 
 
-<?php include './Components/NavigationBar.php' ?>
-
-<div style="background-color: #9a6dbd;" class="text-start p-2   m-1 rounded text-light d-flex justify-content-between" >
+<div style="background-color: #dfd3ed;  color: #7626d1" class="text-start p-2   m-1 rounded  d-flex justify-content-between" >
     <h4> Users </h4>
 
     <input type="text" id="search" class="form-control w-25" placeholder="Search by name">
