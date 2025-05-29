@@ -43,7 +43,7 @@ if (session_status() === PHP_SESSION_NONE) {
       <a class="nav-link text-dark hover-bg-dark" href="#"> <i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
       <a class="nav-link text-dark hover-bg-dark" href="#"><i class="bi bi-table me-2"></i> Orders</a>
       <a class="nav-link text-dark hover-bg-dark" href="inventory"><i class="fa-solid fa-warehouse"></i> Inventory</a>
-      <a class="nav-link text-dark hover-bg-dark" href="#"><i class="bi bi-person-circle me-2"></i> Customers</a>
+      <a class="nav-link text-dark hover-bg-dark" href="customers"><i class="bi bi-person-circle me-2"></i> Customers</a>
       <a class="nav-link text-dark hover-bg-dark" href="users"><i class="fa-solid fa-users"></i> Users</a>
     </nav>
    
@@ -61,7 +61,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <a class="nav-link text-dark" href="#"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
         <a class="nav-link text-dark" href="#"><i class="bi bi-table me-2"></i> Orders</a>
         <a class="nav-link text-dark" href="#"><i class="bi bi-grid me-2"></i> Products</a>
-        <a class="nav-link text-dark" href="#"><i class="bi bi-person-circle me-2"></i> Customers</a>
+        <a class="nav-link text-dark" href="customers"><i class="bi bi-person-circle me-2"></i> Customers</a>
       </nav>
       
     </div>
