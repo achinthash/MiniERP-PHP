@@ -7,6 +7,17 @@ if (session_status() === PHP_SESSION_NONE) {
   $userId =  $_SESSION['user_id'];
   $userrole = $_SESSION['user_role'];
 ?>
+<?php
+
+
+if (isset($_GET['action']) && $_GET['action'] === 'logout') {
+  session_unset();
+  session_destroy();
+  header("Location: login");
+  exit;
+}
+
+?>
 
 
 <nav class="navbar navbar-light " style="background-color: #f5efdf;">
@@ -24,7 +35,14 @@ if (session_status() === PHP_SESSION_NONE) {
               <img src="<?php echo './uploads/profile_pictures/'.$userProPicture ; ?>" class="rounded-circle" height="30" width="30" alt="Avatar" />
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item"  type="button" onclick="userProfilebtn(<?php echo $userId  ?>)"  data-bs-toggle="modal" data-bs-target="#userProfile"> My Profile </a> </li>
+              <li><a class="dropdown-item"  type="button" 
+              
+
+              onclick="userProfilebtn(<?php echo $userId ?>)"
+
+
+
+              data-bs-toggle="modal" data-bs-target="#userProfile"> My Profile </a> </li>
               <li><a class="dropdown-item" href="#">Settings</a></li>
               <li><a class="dropdown-item " href="?action=logout">Logout</a></li>
             </ul>
@@ -41,7 +59,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <nav class="nav flex-column">
       <a class="nav-link  text-dark  hover-bg-dark" href="#">  <i class="fa-solid fa-house"></i>   Home</a>
       <a class="nav-link text-dark hover-bg-dark" href="dashboard"> <i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
-      <a class="nav-link text-dark hover-bg-dark" href="#"><i class="bi bi-table me-2"></i> Orders</a>
+      <a class="nav-link text-dark hover-bg-dark" href="purchaseorders"><i class="bi bi-table me-2"></i> Orders</a>
       <a class="nav-link text-dark hover-bg-dark" href="inventory"><i class="fa-solid fa-warehouse"></i> Inventory</a>
       <a class="nav-link text-dark hover-bg-dark" href="customers"><i class="bi bi-person-circle me-2"></i> Customers</a>
       <a class="nav-link text-dark hover-bg-dark" href="users"><i class="fa-solid fa-users"></i> Users</a>
@@ -60,8 +78,8 @@ if (session_status() === PHP_SESSION_NONE) {
       <nav class="nav flex-column">
         <a class="nav-link active text-white bg-primary" href="#"><i class="bi bi-house-door-fill me-2"></i> Home</a>
         <a class="nav-link text-dark" href="#"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
-        <a class="nav-link text-dark" href="#"><i class="bi bi-table me-2"></i> Orders</a>
-        <a class="nav-link text-dark" href="#"><i class="bi bi-grid me-2"></i> Products</a>
+        <a class="nav-link text-dark" href="purchaseorders"><i class="bi bi-table me-2"></i> Orders</a>
+        <a class="nav-link text-dark" href="inventory"><i class="bi bi-grid me-2"></i> inventory</a>
         <a class="nav-link text-dark" href="customers"><i class="bi bi-person-circle me-2"></i> Customers</a> 
         <a class="nav-link text-dark" href="suppliers"><i class="fa-solid fa-truck-field"></i> Suppliers</a> 
         
@@ -91,19 +109,6 @@ if (session_status() === PHP_SESSION_NONE) {
     </div>
   </div>
 
-<?php
 
 
-    if (isset($_GET['action']) && $_GET['action'] === 'logout') {
-        // Clear session
-        session_unset();
-        session_destroy();
-
-        // Redirect to login page
-        header("Location: login");
-        exit;
-    }
-?>
-
-
-<script src="./assests/js/logedUser.js"> </script>
+<script src="./assets/js/logedUser.js"> </script>

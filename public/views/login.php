@@ -17,7 +17,7 @@
     <title>Login</title>
 
     <!-- boostrap  -->
-    <link rel="stylesheet" href="./assests/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" >
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -64,8 +64,8 @@
 
 
  <!-- boostrap  -->
- <script src="./assests/js/bootstrap.bundle.min.js"></script>
- <script src="./assests/js/login.js"></script>
+ <script src="./assets/js/bootstrap.bundle.min.js"></script>
+ <script src="./assets/js/login.js"></script>
  
 </body>
 </html>

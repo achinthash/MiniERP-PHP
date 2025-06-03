@@ -44,6 +44,9 @@ class Suppliers{
     }
 
 
+   
+
+
     public function suppliers($search, $page, $perPage){
 
         $offset = ($page - 1) * $perPage;

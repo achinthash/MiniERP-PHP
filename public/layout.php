@@ -6,9 +6,10 @@
     <title>Crud</title>
 
     <!-- boostrap  -->
-    <link rel="stylesheet" href="./assests/css/bootstrap.min.css" >
-    <link rel="stylesheet" href="./assests/css/index.css" >
-    
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="./assets/css/index.css" >
+
+       <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
    <!-- Font Awesome 6 (latest) CDN -->
@@ -24,15 +25,13 @@
 </head>
 <body>
 
-    <!-- jquery -->
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-
-
 
 
    <?php include './Components/SideBar.php' ?>
 
-   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.1/jspdf.umd.min.js" integrity="sha512-ad3j5/L4h648YM/KObaUfjCsZRBP9sAOmpjaT2BDx6u9aBrKFp7SbeHykruy83rxfmG42+5QqeL/ngcojglbJw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <main class=" " id="main-content" >
         <?= $content ?>
@@ -41,9 +40,12 @@
    
 
     <!-- boostrap  -->
-    <script src="./assests/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
     
 
-  
+    
+    
+
+
 </body>
 </html>
