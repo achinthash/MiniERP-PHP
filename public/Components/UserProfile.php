@@ -19,9 +19,10 @@
         <div class="card">
           <div class="card-body d-flex align-items-center justify-content-center" style="height: 350px;">
             <div class="text-center">
-              <img id="profile_picture_preview" src="" alt="avatar" class="rounded-circle img-fluid mb-3" style="width: 150px; height: 150px;">
-                <h5 class="p-2" id="username_display"></h5>
-                <p  id="userrole_display"> userrole </p>
+              <img id="profile_picture_preview" src="" alt="avatar"
+                  class="rounded-circle img-fluid mb-3" style="width: 150px; height: 150px;">
+                  <h5 class="p-2" id="username_display"></h5>
+                  <p  id="userrole_display"> userrole </p>
             </div>
           </div>
         </div>

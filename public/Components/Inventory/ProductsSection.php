@@ -92,4 +92,4 @@
 
 
 
-<script src="./assests/js/products.js"> </script>
+<script src="./assets/js/products.js"> </script>

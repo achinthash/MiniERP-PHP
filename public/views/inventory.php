@@ -43,6 +43,6 @@
 
 
 
-<script src="./assests/js/inventory.js"> </script> 
+<script src="./assets/js/inventory.js"> </script> 
 
 <?php $content = ob_get_clean(); include './layout.php' ?> 

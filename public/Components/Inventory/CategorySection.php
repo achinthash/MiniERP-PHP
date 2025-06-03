@@ -74,4 +74,4 @@
 
 
 
-<script src="./assests/js/category.js"> </script>
+<script src="./assets/js/category.js"> </script>

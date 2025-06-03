@@ -29,6 +29,7 @@
 </div>
 
 <!-- new user modal  -->
+
 <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">    
@@ -75,6 +76,6 @@
 </div>
 
 
-<script src="./assests/js/userscript.js"></script>
+<script src="./assets/js/userscript.js"></script>
 
 <?php $content = ob_get_clean(); include './layout.php' ?>
