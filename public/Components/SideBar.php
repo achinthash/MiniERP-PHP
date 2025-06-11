@@ -64,6 +64,8 @@ if (isset($_GET['action']) && $_GET['action'] === 'logout') {
       <a class="nav-link text-dark hover-bg-dark" href="customers"><i class="bi bi-person-circle me-2"></i> Customers</a>
       <a class="nav-link text-dark hover-bg-dark" href="users"><i class="fa-solid fa-users"></i> Users</a>
       <a class="nav-link text-dark hover-bg-dark" href="suppliers"><i class="fa-solid fa-truck-field"></i> Suppliers</a> 
+      <a class="nav-link text-dark hover-bg-dark" href="sales"><i class="fa-solid fa-dollar-sign"></i> Sales</a> 
+
     </nav>
    
   </div>
@@ -82,7 +84,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'logout') {
         <a class="nav-link text-dark" href="inventory"><i class="bi bi-grid me-2"></i> inventory</a>
         <a class="nav-link text-dark" href="customers"><i class="bi bi-person-circle me-2"></i> Customers</a> 
         <a class="nav-link text-dark" href="suppliers"><i class="fa-solid fa-truck-field"></i> Suppliers</a> 
-        
+        <a class="nav-link text-dark" href="sales"><i class="fa-solid fa-dollar-sign"></i> Sales</a> 
       </nav>
       
     </div>
