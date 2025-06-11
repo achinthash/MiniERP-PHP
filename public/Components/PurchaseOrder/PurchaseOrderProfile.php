@@ -14,10 +14,12 @@
     </div>
 
     <div>
-      <p class="mb-0"> <strong>Billed To:</strong> <br><span id="po_supplier_name"></span><br>
-      <i class="fa-solid fa-location-dot"></i>: <span id="po_supplier_address11"></span><br>
-        <i class="fa-solid fa-envelope"></i>: <span id="po_supplier_email"></span><br>
-        <i class="fa-solid fa-phone"></i>: <span id="po_supplier_phone"></span>
+      <p class="mb-0"> <strong>Billed To:</strong> <br>
+      
+      <span> Name:  </span> <span id="po_supplier_name"></span><br>
+      <span> Address: </span> <span id="po_supplier_address11"></span><br>
+      <span> Email:  </span> <span id="po_supplier_email"></span><br>
+      <span> Phone:  </span> <span id="po_supplier_phone"></span>
       </p>
     </div>
     
@@ -76,6 +78,8 @@
       <div style="height: 50px;"></div>
     </div>
   </div>
+
+  
 </div>
 
 

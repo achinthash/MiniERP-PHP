@@ -136,5 +136,6 @@ $create_by = $_SESSION['user_id'];
     });
     grandTotalInput.value = grandTotal.toFixed(2);
   }
+  
 })();
 </script>
