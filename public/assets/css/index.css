@@ -13,12 +13,14 @@ body {
 @media (max-width: 768px) {
   #main-content {
     margin-left: 0px; 
+    overflow-x: hidden;
   }
 }
 
 @media (min-width: 768px) {
   #main-content {
     margin-left: 205px; 
+        overflow-x: hidden;
   }
 }
 
@@ -36,7 +38,7 @@ body {
 }
 
 
-
+/* custom table  */
 .my-custom-table {
   width: 100%;
   border-collapse: collapse;
@@ -65,3 +67,35 @@ body {
 
 
 
+
+/* not found  */
+
+
+.not-found-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.not-found-title {
+  font-size: 100px;
+  font-weight: 800;
+  color: #7626d1;
+}
+
+.not-found-text {
+  font-size: 20px;
+  color: #6c757d;
+}
+
+.not-found-btn {
+  background-color: #7626d1;
+  color: white;
+}
+
+.not-found-btn:hover {
+  background-color: #5d1cb3;
+}

@@ -57,15 +57,26 @@ if (isset($_GET['action']) && $_GET['action'] === 'logout') {
   <div class="d-none d-md-flex flex-column position-fixed vh-100 bg-light border-end p-2" style="width: 200px;">
    
     <nav class="nav flex-column">
-      <a class="nav-link  text-dark  hover-bg-dark" href="#">  <i class="fa-solid fa-house"></i>   Home</a>
-      <a class="nav-link text-dark hover-bg-dark" href="dashboard"> <i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
-      <a class="nav-link text-dark hover-bg-dark" href="purchaseorders"><i class="bi bi-table me-2"></i> Orders</a>
-      <a class="nav-link text-dark hover-bg-dark" href="inventory"><i class="fa-solid fa-warehouse"></i> Inventory</a>
-      <a class="nav-link text-dark hover-bg-dark" href="customers"><i class="bi bi-person-circle me-2"></i> Customers</a>
-      <a class="nav-link text-dark hover-bg-dark" href="users"><i class="fa-solid fa-users"></i> Users</a>
-      <a class="nav-link text-dark hover-bg-dark" href="suppliers"><i class="fa-solid fa-truck-field"></i> Suppliers</a> 
-      <a class="nav-link text-dark hover-bg-dark" href="sales"><i class="fa-solid fa-dollar-sign"></i> Sales</a> 
+   
+            
 
+
+    
+      <?php if($userrole === 'admin' || $userrole === 'manager'): ?>
+        <a class="nav-link text-dark hover-bg-dark" href="dashboard"> <i class="bi bi-house-door-fill me-2"></i> Dashboard</a>
+        <a class="nav-link text-dark hover-bg-dark" href="purchaseorders"><i class="bi bi-table me-2"></i> Orders</a>
+        <a class="nav-link text-dark hover-bg-dark" href="inventory"><i class="fa-solid fa-warehouse"></i> Inventory</a>
+        <a class="nav-link text-dark hover-bg-dark" href="suppliers"><i class="fa-solid fa-truck-field"></i> Suppliers</a> 
+      <?php endif; ?>
+
+        <a class="nav-link text-dark hover-bg-dark" href="sales"><i class="fa-solid fa-dollar-sign"></i> Sales</a> 
+        <a class="nav-link text-dark hover-bg-dark" href="customers"><i class="bi bi-person-circle me-2"></i> Customers</a>
+
+      <?php if($userrole === 'admin') : ?>
+        <a class="nav-link text-dark hover-bg-dark" href="users"><i class="fa-solid fa-users"></i> Users</a>
+      <?php endif; ?>
+
+     
     </nav>
    
   </div>
@@ -73,18 +84,27 @@ if (isset($_GET['action']) && $_GET['action'] === 'logout') {
   <!-- Offcanvas sidebar for mobile -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="mobileSidebarLabel"><i class="bi bi-bootstrap-fill me-2"></i>Sidebar</h5>
+      <h5 class="offcanvas-title" id="mobileSidebarLabel"><i class="bi bi-bootstrap-fill me-2"></i>Menu bar</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body d-flex flex-column">
       <nav class="nav flex-column">
-        <a class="nav-link active text-white bg-primary" href="#"><i class="bi bi-house-door-fill me-2"></i> Home</a>
-        <a class="nav-link text-dark" href="#"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
-        <a class="nav-link text-dark" href="purchaseorders"><i class="bi bi-table me-2"></i> Orders</a>
-        <a class="nav-link text-dark" href="inventory"><i class="bi bi-grid me-2"></i> inventory</a>
-        <a class="nav-link text-dark" href="customers"><i class="bi bi-person-circle me-2"></i> Customers</a> 
-        <a class="nav-link text-dark" href="suppliers"><i class="fa-solid fa-truck-field"></i> Suppliers</a> 
-        <a class="nav-link text-dark" href="sales"><i class="fa-solid fa-dollar-sign"></i> Sales</a> 
+  
+        <?php if($userrole === 'admin' || $userrole === 'manager'): ?>
+        <a class="nav-link text-dark hover-bg-dark" href="dashboard"> <i class="bi bi-house-door-fill me-2"></i> Dashboard</a>
+        <a class="nav-link text-dark hover-bg-dark" href="purchaseorders"><i class="bi bi-table me-2"></i> Orders</a>
+        <a class="nav-link text-dark hover-bg-dark" href="inventory"><i class="fa-solid fa-warehouse"></i> Inventory</a>
+        <a class="nav-link text-dark hover-bg-dark" href="suppliers"><i class="fa-solid fa-truck-field"></i> Suppliers</a> 
+      <?php endif; ?>
+
+        <a class="nav-link text-dark hover-bg-dark" href="sales"><i class="fa-solid fa-dollar-sign"></i> Sales</a> 
+        <a class="nav-link text-dark hover-bg-dark" href="customers"><i class="bi bi-person-circle me-2"></i> Customers</a>
+
+      <?php if($userrole === 'admin') : ?>
+        <a class="nav-link text-dark hover-bg-dark" href="users"><i class="fa-solid fa-users"></i> Users</a>
+      <?php endif; ?>
+
+
       </nav>
       
     </div>

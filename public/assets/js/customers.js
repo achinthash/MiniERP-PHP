@@ -1,3 +1,6 @@
+const userRole = window.SERVER_DATA?.userRole;
+
+
 $(document).ready(function (){
 
 
@@ -20,16 +23,27 @@ $(document).ready(function (){
                 let parsedResponse = typeof response === 'string' ? JSON.parse(response) : response;
 
                 parsedResponse.data.forEach(category => {
+
+
+                    let actionButtons = '';
+                    if (userRole === 'admin' || userRole === 'manager') {
+                        actionButtons = `
+                            <td>
+                                <span onclick="event.stopPropagation(); editCustomer(${category.id})" class="btn btn-sm btn-primary">Edit</span>
+                                <span onclick="event.stopPropagation(); deleteCustomer(${category.id})" class="btn btn-sm btn-danger">Delete</span>
+                            </td>`;
+                    } else {
+                        actionButtons = `<td></td>`;
+                    }
+
+
                     const row = `
                        <tr onclick="customerProfile(${category.id})">
                             <td>${category.id}</td>
                             <td>${category.name}</td>
                             <td>${category.email}</td>
                             <td>${category.phone}</td>
-                            <td> 
-                                <span onclick=" event.stopPropagation(); editCustomer(${category.id})">Edit</span>  
-                                <span onclick=" event.stopPropagation(); deleteCustomer(${category.id})">Delete</span> 
-                            </td>
+                            ${actionButtons}
                         </tr>
                     `;
                     tbody.append(row);

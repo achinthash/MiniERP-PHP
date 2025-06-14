@@ -7,10 +7,11 @@
     exit;
   }
 
-  if($_SESSION['user_role'] !== 'admin'){
-    header("Location: dashboard");
+  if ($_SESSION['user_role'] !== 'admin' && $_SESSION['user_role'] !== 'manager') {
+    header("Location: unauthorized");
     exit;
   }
+
 ?>
 
    <!-- response alerts messages   -->

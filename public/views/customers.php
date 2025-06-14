@@ -7,11 +7,27 @@
     exit;
   }
 
-  if($_SESSION['user_role'] !== 'admin'){
-    header("Location: dashboard");
+  if ($_SESSION['user_role'] !== 'admin' && $_SESSION['user_role'] !== 'manager' && $_SESSION['user_role'] !== 'staff') {
+    header("Location: unauthorized");
     exit;
   }
+
+
+  $userRole = $_SESSION['user_role'];
+
 ?>
+
+
+
+<script>
+    
+    window.SERVER_DATA = {
+        userRole: "<?= $userRole ?>"
+    };
+</script>
+
+
+
 
    <!-- response alerts messages   -->
    <div style="position: absolute; right: 0; bottom: 0;" id="delete_success_message" ></div>
@@ -51,7 +67,9 @@
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Action</th>
+             <?php if($userRole === 'admin' || $userRole === 'manager'): ?>
+              <th>Action</th>
+          <?php endif; ?>
         </tr>
     </thead>
     <tbody id="customerTableBody"></tbody>

@@ -8,15 +8,24 @@
   session_start();
 
   if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_role']) ) {
-    header("Location: login");
+   // header("Location: login");
     exit;
   }
 
-  if($_SESSION['user_role'] !== 'admin'){
-    header("Location: dashboard");
-    exit;
-  }
+  $userRole = $_SESSION['user_role'];
+
+ 
 ?>
+
+
+<script>
+    
+    window.SERVER_DATA = {
+        userRole: "<?= $userRole ?>"
+    };
+</script>
+
+
 
    <!-- response alerts messages   -->
    <div style="position: absolute; right: 0; bottom: 0;" id="delete_sale_success_message" ></div>
@@ -58,7 +67,12 @@
           <th>Sale Date</th>
           <th>Payment Status</th>
           <th>Grand Total</th>
-          <th>Action</th>
+
+          <?php if($userRole === 'admin' || $userRole === 'manager'): ?>
+              <th>Action</th>
+          <?php endif; ?>
+
+         
 
         </tr>
     </thead>
