@@ -289,8 +289,8 @@ if($action == 'login'){
         $_SESSION['user_name'] = $auth['username'];
         $_SESSION['user_role'] = $auth['userrole'];
         $_SESSION['user_profilePic'] = $auth['profile_picture'];
-
-        echo json_encode(['success' => "Login successfull."]);
+ 
+        echo json_encode(['success' => "Login successfull.", 'user_role' => $auth['userrole'] ]);
         exit(); 
 
     } else {

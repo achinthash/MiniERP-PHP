@@ -9,7 +9,7 @@
   }
 
   if($_SESSION['user_role'] !== 'admin'){
-    header("Location: dashboard");
+    header("Location: unauthorized");
     exit;
   }
 

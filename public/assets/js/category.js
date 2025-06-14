@@ -78,8 +78,6 @@ $(document).ready(function (){
             action: 'getCategory',
             id: id
         }, function (response) {
-
-            // console.log(response)
     
             if (response.success) {
         
@@ -112,7 +110,6 @@ $(document).ready(function (){
             dataType: 'json',
             success: function(response){
 
-                console.log(response)
                 if (response.success) {
                     $('#delete_success_message').html('<div class="alert alert-success">' + response.message + '</div>').fadeIn();
                     $('#delete_error_message').html('');

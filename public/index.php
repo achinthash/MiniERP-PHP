@@ -1,3 +1,4 @@
+
 <?php
 
 $basePath = '/practical/MiniERP/public';
@@ -8,7 +9,7 @@ $page = "views/$url.php";
     if(file_exists($page)){
         include $page;
     } else{
-        echo "Page not found.";
+      include './Components/NotFound.php' ;
     }
 
 ?> 

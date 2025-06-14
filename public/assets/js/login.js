@@ -14,7 +14,18 @@ $('#loginForm').on('submit', function (e) {
         success: function (response) {
 
             if (response.success) {
-                window.location.href="users";
+
+                const role = response.user_role?.trim().toLowerCase(); 
+
+                if (role === 'admin' || role === 'manager') {
+                    window.location.href = "dashboard";
+                } else if (role === 'staff') {
+                    window.location.href = "sales";
+                } else {
+                    window.location.href = "unauthorized";
+                }
+                
+               
  
             } else if (response.error) {
              

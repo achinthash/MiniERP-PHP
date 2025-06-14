@@ -1,3 +1,6 @@
+const userRole = window.SERVER_DATA?.userRole;
+
+
 $(document).ready(function () {
     let currentPage = 1;
     let globalProductOptions = '';
@@ -14,12 +17,23 @@ $(document).ready(function () {
             },
             success: function (response) {
 
-                
+                console.log(userRole)
                 const tbody = $("#salesOrderTableBody");
                 tbody.empty();
                 let parsed = typeof response === 'string' ? JSON.parse(response) : response;
 
                 parsed.data.forEach(order => {
+                    let actionButtons = '';
+                    if (userRole === 'admin' || userRole === 'manager') {
+                        actionButtons = `
+                            <td>
+                                <span onclick="event.stopPropagation(); editSalesOrder(${order.id})" class="btn btn-sm btn-primary">Edit</span>
+                                <span onclick="event.stopPropagation(); deleteSalesOrder(${order.id})" class="btn btn-sm btn-danger">Delete</span>
+                            </td>`;
+                    } else {
+                        actionButtons = `<td></td>`;
+                    }
+                
                     const row = `
                         <tr onclick="viewSalesOrder(${order.id})">
                             <td>${order.id}</td>
@@ -27,17 +41,13 @@ $(document).ready(function () {
                             <td>${order.sale_date}</td>
                             <td>${order.payment_status}</td>
                             <td>LKR: ${order.grand_total}</td>
-                            <td>
-                                <span onclick="event.stopPropagation(); editSalesOrder(${order.id})" class="btn btn-sm btn-primary">Edit</span>
-                                <span onclick="event.stopPropagation(); deleteSalesOrder(${order.id})" class="btn btn-sm btn-danger">Delete</span>
-                            </td>
+                            ${actionButtons}
                         </tr>
                     `;
-
-
-
+                
                     tbody.append(row);
                 });
+                
 
                 // Pagination
                 const totalPages = Math.ceil(parsed.total / parsed.perPage);
@@ -80,7 +90,6 @@ $('#salesForm').on('submit', function (e) {
         dataType: 'json',
         success: function (response) {
 
-            console.log(response)
 
 
             if (response.success) {
@@ -113,7 +122,6 @@ window.viewSalesOrder = function (id) {
         id: id
     }, function (response) {
 
-        console.log(response)
 
         if (response.success) {
             const order = response.order;
@@ -352,7 +360,6 @@ window.newSale = function (){
             },
             success: function (response) {
 
-                console.log(response)
 
                 try {
                     let parsed = typeof response === 'string' ? JSON.parse(response) : response;
@@ -394,7 +401,6 @@ window.newSale = function (){
             },
             success: function (response) {
 
-                console.log(response)
 
                 try {
                     let parsed = typeof response === 'string' ? JSON.parse(response) : response;

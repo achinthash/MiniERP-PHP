@@ -130,9 +130,6 @@ $(document).ready(function (){
         }, function (response) {
     
             if (response.success) {
-
-
-                console.log(response)
     
                 $('#name').text(response.suppliers.name);
                 $('#sup_email').text(response.suppliers.email);
